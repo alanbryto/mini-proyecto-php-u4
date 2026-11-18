@@ -1,0 +1,312 @@
+:root {
+    --bg-page: #f1f5f9;
+    --bg-card: #ffffff;
+    --primary: #4f5d95;
+    --primary-dark: #36416d;
+    --accent: #0ea5e9;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --border: #e2e8f0;
+    --success-bg: #dcfce7;
+    --success-text: #166534;
+    --warn-bg: #fef3c7;
+    --warn-text: #92400e;
+    --danger-bg: #fee2e2;
+    --danger-text: #991b1b;
+    --code-bg: #0f172a;
+    --code-text: #e2e8f0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif;
+    background-color: var(--bg-page);
+    color: var(--text-main);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Encabezado y barra de sesión */
+.site-header {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+    color: #ffffff;
+    padding: 1.25rem 1.5rem;
+    box-shadow: 0 2px 10px rgba(15, 23, 42, 0.15);
+}
+
+.header-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+}
+
+.brand h1 {
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+.brand p {
+    font-size: 0.85rem;
+    color: #cbd5e1;
+}
+
+.session-panel {
+    background: rgba(15, 23, 42, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    font-size: 0.88rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+}
+
+.session-metrics {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.session-metrics span strong {
+    color: #7dd3fc;
+}
+
+.btn-reset {
+    background-color: #ef4444;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.45rem 0.85rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.82rem;
+    transition: background-color 0.2s ease;
+}
+
+.btn-reset:hover {
+    background-color: #dc2626;
+}
+
+/* Menú de navegación */
+.main-nav {
+    background-color: #ffffff;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.main-nav ul {
+    max-width: 1120px;
+    margin: 0 auto;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    padding: 0.5rem 1.5rem;
+}
+
+.main-nav a {
+    display: block;
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 600;
+    font-size: 0.92rem;
+    padding: 0.55rem 0.95rem;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.main-nav a:hover {
+    background-color: #e2e8f0;
+    color: var(--primary-dark);
+}
+
+.main-nav a.active {
+    background-color: var(--primary);
+    color: #ffffff;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 1120px;
+    width: 100%;
+    margin: 1.75rem auto;
+    padding: 0 1.5rem;
+    flex: 1;
+}
+
+.page-intro {
+    background: var(--bg-card);
+    border-left: 5px solid var(--primary);
+    border-radius: 10px;
+    padding: 1.4rem 1.6rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.page-intro h2 {
+    color: var(--primary-dark);
+    margin-bottom: 0.4rem;
+    font-size: 1.45rem;
+}
+
+.page-intro p {
+    color: var(--text-muted);
+}
+
+/* Tarjetas y cuadrícula */
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.35rem 1.5rem;
+    margin-bottom: 1.25rem;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.card h3 {
+    color: var(--primary-dark);
+    margin-bottom: 0.75rem;
+    font-size: 1.15rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.45rem;
+}
+
+.output-box {
+    background-color: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 0.9rem 1rem;
+    margin-top: 0.75rem;
+}
+
+.code-snippet {
+    background-color: var(--code-bg);
+    color: var(--code-text);
+    font-family: 'Fira Code', 'Consolas', monospace;
+    font-size: 0.84rem;
+    padding: 0.85rem 1rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 0.75rem 0;
+}
+
+/* Alertas y etiquetas */
+.alert {
+    padding: 0.9rem 1.1rem;
+    border-radius: 8px;
+    margin-bottom: 1.25rem;
+    font-weight: 500;
+}
+
+.alert-success {
+    background-color: var(--success-bg);
+    color: var(--success-text);
+    border: 1px solid #86efac;
+}
+
+.alert-info {
+    background-color: #e0f2fe;
+    color: #075985;
+    border: 1px solid #7dd3fc;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.badge-success { background: var(--success-bg); color: var(--success-text); }
+.badge-warn    { background: var(--warn-bg); color: var(--warn-text); }
+.badge-danger  { background: var(--danger-bg); color: var(--danger-text); }
+
+/* Tablas y listas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.75rem;
+    font-size: 0.93rem;
+}
+
+th, td {
+    text-align: left;
+    padding: 0.7rem 0.85rem;
+    border-bottom: 1px solid var(--border);
+}
+
+th {
+    background-color: #f8fafc;
+    color: var(--primary-dark);
+    font-weight: 700;
+}
+
+tr:hover td {
+    background-color: #f8fafc;
+}
+
+.styled-list {
+    padding-left: 1.35rem;
+    margin-top: 0.5rem;
+}
+
+.styled-list li {
+    margin-bottom: 0.35rem;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--primary);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.6rem 1.1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    margin-top: 0.75rem;
+    transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Pie de página */
+.site-footer {
+    background-color: #1e293b;
+    color: #cbd5e1;
+    text-align: center;
+    padding: 1.25rem 1.5rem;
+    font-size: 0.86rem;
+    margin-top: 2rem;
+}
+
+.site-footer strong {
+    color: #ffffff;
+}
