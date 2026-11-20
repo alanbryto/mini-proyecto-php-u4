@@ -7,6 +7,7 @@ Sitio web dinámico desarrollado en PHP del lado del servidor para demostrar el 
 * **Unidad:** Unidad 4 – Programación del lado del servidor con PHP
 * **Institución:** Instituto Tecnológico de Tuxtla Gutiérrez (TecNM)
 * **Repositorio:** https://github.com/alanbryto/mini-proyecto-php-u4
+* **Sitio en servidor:** https://php-mini-unidad4-equipo.rf.gd/variables.php
 
 ## Integrantes del Equipo
 1. **Axel Nuricumbo Jiménez** (`@alanbryto`) – Arquitectura base, CSS, plantillas `includes/` y módulo de sesiones (`index.php`, `sesiones.php`).
